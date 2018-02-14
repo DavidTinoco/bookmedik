@@ -3,7 +3,7 @@ class Database {
 	public static $db;
 	public static $con;
 	function Database(){
-		$this->user="root";$this->pass="";$this->host="localhost";$this->ddbb="bookmedik";
+		$this->user=getenv("MYSQL_ENV_MYSQL_USER");$this->pass=getenv("MYSQL_ENV_MYSQL_PASSWORD");$this->host=getenv("MYSQL_PORT_3306_TCP_ADDR");$this->ddbb=getenv("MYSQL_ENV_MYSQL_DATABASE");
 	}
 
 	function connect(){
@@ -19,6 +19,6 @@ class Database {
 		}
 		return self::$con;
 	}
-	
+
 }
 ?>
